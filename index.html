@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SensibleSkyblock — Copper Flips</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">◆</span><div><strong>SensibleSkyblock</strong><small>SkyBlock profit tools</small></div></div>
+    <nav><a class="active" href="#copper">Copper</a><a href="#bazaar">Bazaar</a><a href="#auction">Auction House</a></nav>
+    <div class="status"><span id="dot"></span><span id="statusText">Loading</span></div>
+  </header>
+
+  <main id="copper">
+    <section class="hero">
+      <div><p class="eyebrow">SKYMART</p><h1>Copper Flips</h1><p>Find the best items to buy with Copper and turn into coins.</p></div>
+      <div class="hero-stats"><div><span>Copper value</span><b id="copperValue">10 coins</b></div><div><span>Updated</span><b id="updated">—</b></div></div>
+    </section>
+
+    <section class="controls">
+      <input id="search" type="search" placeholder="Search items...">
+      <select id="mode"><option value="recommended">Recommended Only</option><option value="all">Show All</option><option value="instant">Instant Only</option><option value="instantNoCraft">Instant & No Crafting</option><option value="noCraft">No Crafting</option><option value="auction">Auction Sales Only</option></select>
+      <select id="sort"><option value="profit">Profit / Copper</option><option value="sell">Sell Price</option><option value="cost">Copper Cost</option><option value="name">Name</option></select>
+      <button id="refresh">↻ Refresh</button>
+    </section>
+
+    <section class="notice"><b>How it works</b><span>Prices are pulled from public SkyBlock market data when available. Profit accounts for the Copper cost and required materials.</span></section>
+
+    <section class="table-wrap">
+      <table><thead><tr><th>Item</th><th>Profit With Orders</th><th>Instant Profit</th><th>Required Items <small>(order → instant)</small></th><th>Sell Price <small>(order → instant)</small></th></tr></thead><tbody id="rows"></tbody></table>
+      <div id="empty" class="empty hidden">No matching flips.</div>
+    </section>
+    <footer>Not affiliated with Hypixel, Mojang, or Microsoft. Market data can change at any time.</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
